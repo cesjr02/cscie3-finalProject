@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+
+    <title>CSCI E-3 Final Project</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+    
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form class="form-signup">
+        <h2 class="form-signup-heading">Create Account</h2>
+        <br />
+        <label for="username" class="sr-only">Username</label>
+        Username
+        <input type="text" id="username" class="form-control form-signup" name="username" required autofocus>
+        <span class="alert alert-warning" id="userHint" role="alert">Your username must have at least 8 characters</span>
+        <span class="glyphicon glyphicon-ok alert alert-success" id="userOk"> Ok!</span>
+        
+        Password
+        <label for="pwd1" class="sr-only">Password</label>
+        <input type="password" id="pwd1" class="form-control form-signup" pattern="(?=.*\d)(?=.*[_\W]).+$" name="pwd1" required>
+        <span class="alert alert-warning" id="pwd1Hint" role="alert">Your password must have at least 8 characters and must contain at least one number and symbol</span>
+        <span class="glyphicon glyphicon-ok alert alert-success" id="pwd1Ok"> Success!</span>
+
+        Retype Password
+        <label for="pwd2" class="sr-only">Password</label>
+        <input type="password" id="pwd2" class="form-control form-signup" name="pwd2" required>
+        <span class="alert alert-danger" id="pwd2Hint" role="alert">Passwords don't match</span>
+        <span class="glyphicon glyphicon-ok alert alert-success" id="pwd2Ok"> Match!</span>
+
+        <br />
+
+
+
+
+        <h4 class="form-signup-heading">User Info</h4>
+        Street Address
+        <label for="address" class="sr-only">Address</label>
+        <input name="address" id="address" type="text" class="form-control form-signup">
+
+
+        Zip Code
+        <label for="zip" class="sr-only">Zip</label>
+        <input placeholder="02138" name="zip" id="zip" type="text" class="form-control form-signup" pattern="^\d{5}(?:[-\s]\d{4})?$">
+        <span class="alert alert-danger" id="zipHint" role="alert">Zip Code must be in 12345, 12345-6789 or 12345 6789 format</span>
+
+        Location
+        <label for="cityState" class="sr-only">Zip</label>
+        <input name="cityState" id="cityState" type="text" class="form-control form-signup" disabled>
+        <br />
+
+
+        <h4 class="form-signup-heading">Contact Info</h4>
+        Phone
+        <label for="phone" class="sr-only">Phone</label>
+        <input name="phone" id="phone" type="tel" class="form-control form-signup">
+        <span class="alert alert-warning" id="phoneHint" role="alert">Your phone number must be ten-digits and in 555-555-5555, (555)555-5555 or 5555555555 format</span>
+        <span class="glyphicon glyphicon-ok alert alert-success" id="phoneOk"> Ok!</span>
+
+        Email
+        <label for="email" class="sr-only">Email</label>
+        <input name="email" id="email" type="email" class="form-control form-signup" pattern=".+@.+\..+">
+        <span class="alert alert-warning" id="emailHint" role="alert">Please check your email address and try again</span>
+        <span class="glyphicon glyphicon-ok alert alert-success" id="emailOk"> Ok!</span>
+        <br />
+        <span id="submitHelp" class="alert alert-warning">You must enter your phone number or email address</span>
+        <span id="submitHint" class="alert alert-danger">You must enter your phone number or email address</span>
+
+        <br />
+        <button class="btn btn-lg btn-primary btn-block" id="submit" type="submit">Submit</button>
+        <div class="btn btn-lg btn-default btn-block" id="resetForm">Reset Form</div>
+      </form>
+
+
+
+
+
+    </div> <!-- /container -->
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  
+
+  <script src="js/form.js"></script>
+   
+  </body>
+</html>
