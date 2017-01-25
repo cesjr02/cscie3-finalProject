@@ -32,7 +32,7 @@ var emailOk = document.getElementById("emailOk");
 
 
 
-// USER & PASSWORD FORM VALIDATION 
+// USER & PASSWORD FORM VALIDATION
 // userField behavior on input
 userField.addEventListener("input", function() {
 	// check first username length
@@ -128,7 +128,7 @@ secondPasswordField.addEventListener("blur", function() {
 		pwd2Hint.style.display = "none";
 	} else {
 		pwd2Hint.style.display = "block";
-	}	
+	}
 });
 
 
@@ -143,7 +143,7 @@ emailField.addEventListener("blur", function() {
 		// if valid store in local storage
 		window.localStorage.setItem("emailStorage",  emailField.value);
 		emailHint.style.display = "none";
-		emailOk.style.display = "block";	
+		emailOk.style.display = "block";
 	}
 	if (emailField.value == "") {
 		emailHint.style.display = "none";
@@ -204,7 +204,7 @@ function reformat() {
 	        // put in local storage
 			window.localStorage.setItem("phoneStorage",  phoneField.value);
 			phoneOk.style.display = "block";
-    // check for regex match xxx-xxx-xxxx      
+    // check for regex match xxx-xxx-xxxx
     } else if (phoneField.value.match(/^(\d{3})-(\d{3})-(\d{4})$/)) {
         // do nothing, already the correct format
         phoneHint.style.display = "none";
@@ -235,7 +235,7 @@ phone.addEventListener("input", function() {
 		phoneHint.style.display = "none";
 		phoneOk.style.display = "none";
 		submitHelp.style.display = "block";
-	}	
+	}
 });
 
 
@@ -246,7 +246,7 @@ phone.addEventListener("blur", function() {
 		phoneHint.style.display = "none";
 		phoneOk.style.display = "none";
 		// remove from local storage
-		window.localStorage.removeItem("phoneStorage");	
+		window.localStorage.removeItem("phoneStorage");
 	}
 	if (phoneField.valid) {
 		submitHelp.style.display = "none";
@@ -279,7 +279,6 @@ var citySate = document.getElementById("cityState");
 var zipField = myForm.zip;
 
 zip.addEventListener("blur", getLocation);
-// function modeled after Larry's example using zip to look up lat and lon. In this case I'm returning the formatted_address
 function getLocation(e) {
 	// check if valid and input value is not empty
 	if (this.validity.valid && !zipField.value == "") {
@@ -322,7 +321,7 @@ zip.addEventListener("blur", function() {
 	// removes hint if user deletes zipField field and tabs to another field
 	if (zipField.value == "") {
 		zipHint.style.display = "none";
-		
+
 	}
 });
 
@@ -424,7 +423,7 @@ if (retrieveAddress) {
 }
 
 
-// store zip code 
+// store zip code
 zipField.addEventListener("blur", function() {
 	if(this.validity.valid && !zipField.value == "") {
 		window.localStorage.setItem("zipStorage", zipField.value);
@@ -480,15 +479,15 @@ myForm.addEventListener("submit", function(e) {
 		submitHint.style.display = "block";
 		submitHelp.style.display = "none";
 		e.preventDefault();
-		
+
 	// else, check if email or phone field is valid. If so, submit.
 	} else if (emailField.valid || phoneField.value.match(/^(\d{3})-(\d{3})-(\d{4})$/)) {
 		submitHint.style.display = "none";
 	} else {
 		// no nothing
 	}
-	
+
 });
 
 
-} // end 
+} // end
